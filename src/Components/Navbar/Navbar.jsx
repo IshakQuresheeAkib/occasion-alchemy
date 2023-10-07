@@ -7,8 +7,8 @@ const Navbar = () => {
 
     return (           
         <nav className="">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <div onClick={()=>navigate('/')} className="mt-2 cursor-pointer flex gap-4">
+            <div className="flex flex-wrap items-center justify-between mx-auto">
+                <div onClick={()=>navigate('/')} className="my-2.5 cursor-pointer flex gap-4">
                     <SiSkynet className="text-5xl text-green-400"></SiSkynet>
                     <div>
                         <h3 className=" font-Festive text-4xl font-medium text-green-400">Occasion</h3>
