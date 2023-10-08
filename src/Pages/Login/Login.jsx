@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from '../../Hook/useAuth'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -6,24 +6,33 @@ import { BsGoogle,BsGithub } from 'react-icons/bs';
 
 const Login = () => {
 
-    const { signIn } = useAuth()
+    const { signIn,user } = useAuth()
+    const navigate = useNavigate();
     
 
     const handleLogin = e =>{
         e.preventDefault();
+
         const form = new FormData (e.currentTarget)
         const email = form.get('email')
         const password = form.get('password')
+        
+        if (user) {
+            toast.error('Please Log Out first from your current account,then log in to new account!')
+            return;
+        }
+
         signIn(email,password)
         .then(()=>{
-            toast.success('Logged In Successfully!');   
-            
+            toast.success('Log In Successfully!');   
+            navigate('/')
         })
         .catch(err=>{
             console.log(email,password);
             console.log(err);
         })
     }
+    
 
     return (
         <div className="shadow-xl md:w-2/5 w-11/12 border rounded-xl mx-auto my-20 ">

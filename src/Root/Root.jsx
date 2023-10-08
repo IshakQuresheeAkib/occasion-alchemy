@@ -12,7 +12,11 @@ const Root = () => {
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
-            <ToastContainer></ToastContainer>
+            <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            pauseOnFocusLoss={false}
+            />
         </div>
     );
 };
