@@ -26,10 +26,10 @@ const Login = () => {
     }
 
     return (
-        <div className="shadow-xl w-2/5 mx-auto mb-20">
-            <div className="hero mt-20 p-10 bg-white">
-                <div className="hero-content flex flex-col items-stretch w-4/5">
-                    <h1 className="text-3xl font-semibold text-[#403F3F] pb-5">Login your account</h1>
+        <div className="shadow-xl md:w-2/5 w-11/12 border rounded-xl mx-auto my-20 ">
+            <div className="hero p-10 bg-white">
+                <div className="hero-content flex flex-col items-stretch md:w-4/5">
+                    <h1 className="text-3xl font-semibold text-center text-[#403F3F] pb-5">Login your account</h1>
                     <form onSubmit={handleLogin} className=" border-t border-[#E7E7E7] pt-5">
                         <div className="form-control">
                             <label className="label">

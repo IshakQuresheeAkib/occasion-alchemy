@@ -26,8 +26,8 @@ const Register = () => {
         .catch(err=>console.log(err))
     }
     return (
-        <div className="hero mt-20 w-2/5 mx-auto p-10 shadow-xl mb-20">
-                <div className="hero-content flex flex-col items-stretch w-4/5">
+        <div className="hero md:w-2/5 w-11/12 border rounded-xl mx-auto p-10 shadow-xl my-20">
+                <div className="hero-content flex flex-col items-stretch md:w-4/5 ">
                     <h1 className="text-3xl font-semibold text-center text-[#403F3F] pb-5">Register your account</h1>
                     <form onSubmit={handleRegister} className=" border-t border-[#E7E7E7] pt-5">
                         <div className="form-control">
