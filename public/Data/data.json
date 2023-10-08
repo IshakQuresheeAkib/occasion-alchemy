@@ -1,0 +1,51 @@
+[
+    {
+      "title": "Wedding Planning",
+      "image": "https://i.ibb.co/vd6jHmD/bunch-flowers-leaves-table.jpg",
+      "price": "$2,500",
+      "description": "Let us make your special day truly unforgettable. Our wedding planning service covers everything from venue selection to catering, ensuring your wedding is a dream come true.",
+      "buttonText": "Learn More",
+      "id":"1"
+    },
+    {
+      "title": "Baby shower",
+      "image": "https://i.ibb.co/XzGYk1q/two-little-girls-yellow-dresses-sit-egg-studio.jpg",
+      "price": "$1,500",
+      "description": "Crafting Joyful Baby Showers: We create magical moments, from themed decor to interactive games, ensuring parents-to-be and guests cherish this special occasion forever.",
+      "buttonText": "Learn More",
+      "id":"2"
+    },
+    {
+      "title": "Birthday Parties",
+      "image": "https://i.ibb.co/7z8Gkt2/jon-tyson-CP68p1f-ZS8k-unsplash-1.jpg",
+      "price": "$500",
+      "description": "Celebrate birthdays in style with our birthday party planning service. We handle everything, from decorations to entertainment, so you can enjoy the day worry-free.",
+      "buttonText": "Learn More",
+      "id":"3"
+    },
+    {
+      "title": "Anniversary Celebrations",
+      "image": "https://i.ibb.co/ZGNKDyN/nathan-dumlao-5-BB-at-DT4o-A-unsplash.jpg",
+      "price": "$800",
+      "description": "Mark your special milestones with us. Our anniversary celebration service includes romantic setups, fine dining, and personalized experiences for couples.",
+      "buttonText": "Learn More",
+      "id":"4"
+    },
+    {
+      "title": "Engagement Parties",
+      "image": "https://i.ibb.co/KNgc69K/esther-tuttle-0-U-d-Xov-BS2-E-unsplash.jpg",
+      "price": "$600",
+      "description": "Elevate Your Engagement: Our team designs and orchestrates unforgettable engagement parties, infusing your love story into every detail for a celebration that radiates joy and romance.",
+      "buttonText": "Learn More",
+      "id":"5"
+    },
+    {
+      "title": "Festival Events",
+      "image": "https://i.ibb.co/jgw6T4g/aditya-chinchure-Zh-QCZjr9f-Ho-unsplash.jpg",
+      "price": "$1,200",
+      "description": "Organize festivals and community events that bring people together. We handle logistics, entertainment, and marketing to ensure a memorable occasion.",
+      "buttonText": "Learn More",
+      "id":"6"
+    }
+  ]
+  

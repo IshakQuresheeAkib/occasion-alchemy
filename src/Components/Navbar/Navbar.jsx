@@ -6,7 +6,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     return (           
-        <nav className="">
+        <nav className="max-w-7xl mx-auto">
             <div className="flex flex-wrap items-center justify-between mx-auto">
                 <div onClick={()=>navigate('/')} className="my-2.5 cursor-pointer flex gap-4">
                     <SiSkynet className="text-5xl text-green-400"></SiSkynet>
