@@ -45,22 +45,12 @@ const Banner = () => {
               <div>
                 <img src="/clean.jpg" alt="" className=' opacity-30'/>
                 <div className='absolute md:bottom-0 md:top-0 bottom-20 md:translate-y-64 translate-y-14 left-1/4'> 
+                  <h1 className='font-semibold text-white md:text-5xl text-2xl'>From set up</h1>
+                  <h1 className=' font-medium md:text-5xl text-white text-2xl' >to </h1> 
                   <TypeAnimation
-                  sequence={[`From set up,`,1000]}
-                  cursor={false}
-                  className='font-semibold text-white md:text-5xl text-2xl'
-                  /> <br/>
-                  <div className='md:my-3'>
-                  <TypeAnimation
-                  sequence={[`to`,1000]}
-                  cursor={false}
-                  className=' font-medium md:text-5xl text-white text-2xl '
-                  /><br/>
-                  </div>
-                  <TypeAnimation
-                  sequence={[`clean up`,1000]}
+                  sequence={[`clean up!`,1000,]} 
                   className=' text-lime-300 font-bold md:text-6xl text-2xl '
-                  />                 
+                  />      
                   <p className='md:w-3/5 w-10/12 mt-4 mb-3 text-xs text-white md:tracking-widest'>Planning a Wedding,Proposal or Event in our busy city is not so easy,and it takes skills(and time) to make it all look easy-going</p>
                   <button className='mt-3 normal-case px-4 py-2 bg-lime-300 hover:bg-lime-400 duration-150 active:scale-90 font-medium'>Get In Touch</button>
                 </div>
