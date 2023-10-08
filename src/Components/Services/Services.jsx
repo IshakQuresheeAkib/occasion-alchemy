@@ -6,14 +6,14 @@ const Services = () => {
     console.log(services);
 
     return (
-        <div className=" my-28 text-center">
+        <div className="md:my-28 my-16 text-center ">
             <div>
                 <h1 className=" font-bold text-3xl">It’s simple! You have an event to plan and <br />
                 <span className=" text-green-400 ">we have the solutions</span></h1>
                 <hr className="bg-green-400 h-1 w-20 mx-auto mt-2"/>
                 <p className="mt-3 text-xs text-gray-500">HERE IS HOW WE CAN HELP YOU</p>
             </div>
-            <div className="flex flex-wrap gap-16 mt-20 text-left">
+            <div className="flex flex-wrap gap-16 mt-20 text-left mx-auto justify-center">
                 {   services &&
                     services.map(service=><div key={service.id} className="card w-96 bg-base-100 hover:shadow-2xl duration-500 border">
                     <figure>
