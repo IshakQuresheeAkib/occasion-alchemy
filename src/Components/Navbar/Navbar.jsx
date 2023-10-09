@@ -1,16 +1,19 @@
-import {  NavLink, useNavigate } from "react-router-dom";
+import {NavLink, useNavigate } from "react-router-dom";
 import { SiSkynet } from 'react-icons/si';
 import useAuth from "../../Hook/useAuth";
 import { toast } from "react-toastify";
 import { HiMenuAlt1 } from 'react-icons/hi';
 import { MdOutlineClose } from 'react-icons/md'
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Navbar = () => {
 
     const { loading,user,logOut } = useAuth();
     console.log(user,loading);
     const [open,setOpen] = useState(false);
+    const [profile,setProfile] = useState(false)
     const navigate = useNavigate();
 
     const handleLogging = () => {
@@ -25,12 +28,17 @@ const Navbar = () => {
         navigate('/login')
     }
 
-    
+    useEffect(()=>{
+        AOS.init({
+            duration:1200,
+            easing:'ease-in-out-sine',           
+          });
+    },[])
 
     return (           
-        <nav className="max-w-7xl mx-auto">
-            <div className="flex flex-wrap items-center justify-between mx-auto" >
-                <div onClick={()=>navigate('/')} className="my-2.5 cursor-pointer flex gap-4" style={{display: open ? "none":'block'}}>
+        <nav className={`max-w-7xl mx-auto ${open || 'px-2'}`}>
+            <div className="flex items-center justify-between mx-auto" >
+                <div onClick={()=>navigate('/')} className={`my-2.5 cursor-pointer flex gap-4 ${open && 'hidden'}`}>
                     <SiSkynet className="text-5xl text-green-400"></SiSkynet>
                     <div>
                         <h3 className=" font-Festive text-4xl font-medium text-green-400">Occasion</h3>
@@ -39,37 +47,39 @@ const Navbar = () => {
                 </div>
                 <div className="flex gap-6 items-center md:order-2">
                     {
-                        !open ? <div className="dropdown dropdown-end ">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        user && <div className={`border relative ${open && 'hidden'}`} >
+                        <label onClick={()=>setProfile(!profile)} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                            <img src="/icon.png" />
+                            <img src={user.photoURL} />
                             </div>
                         </label>
-                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 mb-10">
-                            <li>
-                            <a className="justify-between">
-                                Profile
-                                <span className="badge">New</span>
-                            </a>
-                            </li>
-                            <li><a>Settings</a></li>
+                        {
+                            profile && <ul className={`mt-3  p-2 shadow menu bg-base-100 rounded-box duration-700 ${user && "absolute z-50 top-10 md:-left-0 right-0"}`} data-aos='zoom-in'>
+                            <li><a> {user && user.displayName}</a></li>
+                            <li><a>{user && user.email}</a></li>
                             <li><a>Logout</a></li>
                         </ul>
-                    </div> : ''
-                    }
-                    <button onClick={()=>handleLogging()} className="btn btn-success normal-case text-white" style={{display: open ? "none":'block'}}> {loading ? '' : user ? 'Log Out' : 'Log in'}</button>
-                    <div onClick={()=>setOpen(!open)} className="md:hidden bg-green-400">
+                        }
+                    </div>  
+                    }                   
+                    <button onClick={()=>handleLogging()} className="btn btn-success normal-case text-white md:block hidden"> {loading ? '' : user ? 'Log Out' : 'Log in'}</button>
+                    <div className={`md:hidden ${open && 'bg-green-400'}`}  >
+                        <div className="text-2xl" onClick={()=>setOpen(!open)} >
+                            {
+                                open ? <MdOutlineClose className="m-3"/>:<HiMenuAlt1/>
+                            }
+                        </div> 
                         {
-                            open ? <MdOutlineClose className="text-2xl "/>:<HiMenuAlt1 className="text-2xl"></HiMenuAlt1>
-                        } 
-                        <div className={` text-white font-semibold px-6 rounded-xl mb-20 py-4 duration-200 flex justify-center ${open?'bg-green-400 h-screen w-screen relative right-0':'-right-96 absolute'}`}>
-                            <ul>
+                            open && <div className="text-white p-14 bg-green-400 h-screen w-screen" data-aos='fade-right'>
+                            <ul className="space-y-16 text-xl w-24" onClick={()=>setOpen(!open)} >
                                 <li>Home</li>
                                 <li>About</li>
                                 <li>Services</li>
                                 <li>Contact</li>
+                                <li><button onClick={()=>handleLogging()}> {loading ? '' : user ? 'Log Out' : 'Log in'}</button></li>
                             </ul>
-                        </div>                       
+                        </div> 
+                        }
                     </div>
                 </div>
                 <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
