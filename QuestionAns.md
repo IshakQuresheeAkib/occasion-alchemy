@@ -138,7 +138,7 @@ console.log(count);
 
 <i>The forEach method iterates over each element in the nums array.
 The callback function (num) => { if (num) count += 1; } increments the count variable only when the current element num is truthy. In JavaScript, 0 is considered falsy, and all other numbers are truthy.
-Therefore, only the elements 1, 2, and 3 will increment the count. The final value of count is 3, leading to the output of 2.</i>
+Therefore, The final value of count is 3.</i>
 
 </p>
 </details>
