@@ -30,7 +30,7 @@ const Navbar = () => {
 
     useEffect(()=>{
         AOS.init({
-            duration:100,      
+            duration:1000,      
           });
     },[])
 
@@ -53,14 +53,14 @@ const Navbar = () => {
                             </div>
                         </label>
                         {
-                            profile && <ul className={`mt-3 w-64 shadow menu bg-base-100 rounded-box duration-700 ${user && "absolute z-50 top-10 md:-left-0 right-0"}`} data-aos='zoom-in'>
+                            profile && <ul className={`mt-3 w-64 shadow menu bg-base-100 rounded-box duration-700 ${user && "absolute z-50 top-10 md:-left-0 right-0"}`} >
                             <li><a> {user && user.displayName}</a></li>
                             <li><a>{user && user.email}</a></li>
                         </ul>
                         }
                     </div>  
                     }                   
-                    <button onClick={()=>handleLogging()} className="btn btn-success normal-case text-white md:block hidden"> {loading ? '' : user ? 'Log Out' : 'Log in'}</button>
+                    <button onClick={()=>handleLogging()} className="btn btn-success w-24 normal-case text-white md:block hidden"> {loading ? '' : user ? 'Log Out' : 'Log in'}</button>
                     <div className={`md:hidden ${open && 'bg-green-400'}`}  >
                         <div className="text-2xl btn-ghost btn" onClick={()=>setOpen(!open)} >
                             {
@@ -78,7 +78,7 @@ const Navbar = () => {
                                     </>
                                 }
                                 <Link to="/contact">Contact</Link>
-                                <a><button onClick={()=>handleLogging()}> {loading ? '' : user ? 'Log Out' : 'Log in'}</button></a>
+                                <a><button onClick={()=>handleLogging()} > {loading ? '' : user ? 'Log Out' : 'Log in'}</button></a>
                             </div>
                         </div> 
                         }

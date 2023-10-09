@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from '../../Hook/useAuth'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BsGoogle,BsGithub } from 'react-icons/bs';
+import { BsGoogle } from 'react-icons/bs';
 
 const Login = () => {
 
@@ -21,20 +21,17 @@ const Login = () => {
         if (user) {
             toast.error('Please Log Out first from your current account,then log in to new account!');  
                   
-        }
-
-        if (!/(?=.*[!#$%&?^*@~() "])/.test(password)) {
-            return toast.error('Password should have a special character!')
-        }else if(!/(?=.{8,})/.test(password)){
-            return toast.error('Password should be eight character or longer !')
-        }
+        }      
 
         signIn(email,password)
         .then(()=>{
             toast.success('Log In Successfully!');   
             location.state ? navigate(`${location.state}`) : navigate('/')  
         })
-        .catch(err=>toast.error("Error,",err))
+        .catch((error) => {
+            console.log(error);
+            toast.error("Error",error)
+       })
     }
     
     const handleGoogle = () =>{
@@ -79,7 +76,7 @@ const Login = () => {
                 </div>
                 <div className="flex gap-3 justify-center text-xl mt-4">
                     <BsGoogle onClick={()=> handleGoogle()} className=" cursor-pointer hover:text-green-400"></BsGoogle>
-                    <BsGithub className="cursor-pointer hover:text-green-400"></BsGithub>
+                    {/* <BsGithub className="cursor-pointer hover:text-green-400"></BsGithub> */}
                 </div>
             </div>
         </div>

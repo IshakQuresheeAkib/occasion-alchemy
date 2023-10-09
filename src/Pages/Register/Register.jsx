@@ -19,10 +19,11 @@ const Register = () => {
         
         if (!/(?=.*[!#$%&?^*@~() "])/.test(password)) {
             return toast.error('Password should have a special character!')
+        }else if (!/[A-Z]/.test(password)) {
+            return toast.error('Password should have a capital letter !')
         }else if(!/(?=.{8,})/.test(password)){
             return toast.error('Password should be eight char or longer !')
         }
-        
         console.log(email,password);
 
         createUser(email,password)
