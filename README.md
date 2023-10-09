@@ -1,4 +1,4 @@
-# [Occasion Alchemy-Event Management Website] (https://occasion-alchemy.web.app/)
+# Occasion Alchemy-Event Management Website (https://occasion-alchemy.web.app/)
 
 <h1> Features and Functionalities:</h1>
 
