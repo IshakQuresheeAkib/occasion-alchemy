@@ -18,7 +18,7 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: B?
+#### Answer: B
 
 <i>In the initial line of code, a variable called "greeting" was declared without being assigned a value.
 Subsequently, in the second line, there was a typographical error where "greetign" was used instead of "greeting" when attempting to assign an empty object to the variable.
@@ -50,7 +50,7 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: C?
+#### Answer: C
 
 <i>The "sum" function accepts two parameters, "a" and "b," and adds them together using the "+" operator.
 If you invoke the "sum(1, "2")" function in JavaScript, it performs a process called type coercion, where it converts the number 1 into a string to facilitate the operation. Consequently, it combines the strings "1" and "2," resulting in the string "12.".</i>
@@ -77,7 +77,7 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: A?
+#### Answer: A
 
 <i>The food array is defined with initial values "🍕", "🍫", "🥑", "🍔".
 The info object is created with a property favoriteFood set to the first element of the food array, which is "🍕".
@@ -105,7 +105,7 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: B?
+#### Answer: B
 
 <i>The sayHi function expects a parameter name but when called with sayHi(), no argument is provided.
 In JavaScript, when a function is called with missing arguments, the missing parameters are assigned the value undefined. Therefore, the result is "Hi there, undefined" because name is not passed a value in the function call.</i>
@@ -134,7 +134,7 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: B?
+#### Answer: B
 
 <i>The forEach method iterates over each element in the nums array.
 The callback function (num) => { if (num) count += 1; } increments the count variable only when the current element num is truthy. In JavaScript, 0 is considered falsy, and all other numbers are truthy.
