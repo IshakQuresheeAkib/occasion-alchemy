@@ -30,8 +30,7 @@ const Navbar = () => {
 
     useEffect(()=>{
         AOS.init({
-            duration:1200,
-            easing:'ease-in-out-sine',           
+            duration:100,      
           });
     },[])
 
@@ -47,26 +46,25 @@ const Navbar = () => {
                 </div>
                 <div className="flex gap-6 items-center md:order-2">
                     {
-                        user && <div className={`border relative ${open && 'hidden'}`} >
+                        user && <div className={` relative ${open && 'hidden'}`} >
                         <label onClick={()=>setProfile(!profile)} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
+                            <div className="rounded-full">
                             <img src={user.photoURL} />
                             </div>
                         </label>
                         {
-                            profile && <ul className={`mt-3  p-2 shadow menu bg-base-100 rounded-box duration-700 ${user && "absolute z-50 top-10 md:-left-0 right-0"}`} data-aos='zoom-in'>
+                            profile && <ul className={`mt-3 w-64 shadow menu bg-base-100 rounded-box duration-700 ${user && "absolute z-50 top-10 md:-left-0 right-0"}`} data-aos='zoom-in'>
                             <li><a> {user && user.displayName}</a></li>
                             <li><a>{user && user.email}</a></li>
-                            <li><a>Logout</a></li>
                         </ul>
                         }
                     </div>  
                     }                   
                     <button onClick={()=>handleLogging()} className="btn btn-success normal-case text-white md:block hidden"> {loading ? '' : user ? 'Log Out' : 'Log in'}</button>
                     <div className={`md:hidden ${open && 'bg-green-400'}`}  >
-                        <div className="text-2xl" onClick={()=>setOpen(!open)} >
+                        <div className="text-2xl btn-ghost btn" onClick={()=>setOpen(!open)} >
                             {
-                                open ? <MdOutlineClose className="m-3"/>:<HiMenuAlt1/>
+                                open ? <MdOutlineClose className=""/>:<HiMenuAlt1/>
                             }
                         </div> 
                         {

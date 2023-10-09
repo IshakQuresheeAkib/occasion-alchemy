@@ -6,21 +6,19 @@ import { BsGoogle,BsGithub } from 'react-icons/bs';
 
 const Login = () => {
 
-    const { signIn,user } = useAuth()
+    const { signIn,user,googleSignIn } = useAuth()
     const navigate = useNavigate();
     
 
     const handleLogin = e =>{
         e.preventDefault();
-
         const form = new FormData (e.currentTarget)
         const email = form.get('email')
         const password = form.get('password')
         
         if (user) {
-            toast.error('Please Log Out first from your current account,then log in to new account!')
-            return;
-        }
+            return toast.error('Please Log Out first from your current account,then log in to new account!');          
+        }   
 
         signIn(email,password)
         .then(()=>{
@@ -33,6 +31,9 @@ const Login = () => {
         })
     }
     
+    const handleGoogle = () =>{
+        return googleSignIn();
+    }
 
     return (
         <div className="shadow-xl md:w-2/5 w-11/12 border rounded-xl mx-auto my-20 ">
@@ -66,7 +67,7 @@ const Login = () => {
                     <hr className="w-16 h-px bg-gray-300"/>
                 </div>
                 <div className="flex gap-3 justify-center text-xl mt-4">
-                    <BsGoogle className=" cursor-pointer text-green-400"></BsGoogle>
+                    <BsGoogle onClick={()=> handleGoogle()} className=" cursor-pointer text-green-400"></BsGoogle>
                     <BsGithub className="cursor-pointer text-green-400"></BsGithub>
                 </div>
             </div>

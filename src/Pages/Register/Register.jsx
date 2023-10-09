@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const Register = () => {
-    const { createUser } = useAuth();
+    const { createUser,upgradeProfile } = useAuth();
     const navigate = useNavigate();
     
 
@@ -13,6 +13,8 @@ const Register = () => {
         const form = new FormData(e.currentTarget)
         const email = form.get('email')
         const password = form.get('password')
+        const name = form.get('name')
+        const image = form.get('imageUrl')
         console.log(form);
         
         console.log(email,password);
@@ -20,6 +22,7 @@ const Register = () => {
         createUser(email,password)
         .then(({user})=>{
             console.log(user);
+            upgradeProfile(name,image)
             e.target.reset();
             navigate('/');
         })
