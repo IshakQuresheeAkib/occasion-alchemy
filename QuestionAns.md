@@ -136,9 +136,7 @@ console.log(count);
 
 #### Answer: C
 
-<i>The forEach method iterates over each element in the nums array.
-The callback function (num) => { if (num) count += 1; } increments the count variable only when the current element num is truthy. In JavaScript, 0 is considered falsy, and all other numbers are truthy.
-Therefore, The final value of count is 3.</i>
+<i>In the given JavaScript code, there's an array called nums containing [0, 1, 2, 3], and a variable count is initialized to 0. The code uses a forEach loop to iterate through the array elements. Inside the loop, a condition checks if the current element is truthy (not equal to 0), and if it is, it increments the count variable by 1. Since the loop encounters the values 1, 2, and 3, all of which are truthy, count gets incremented three times. As a result, when you log count to the console, it displays 3, indicating that there are three truthy values in the nums array.</i>
 
 </p>
 </details>
