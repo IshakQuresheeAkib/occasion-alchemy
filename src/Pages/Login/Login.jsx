@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from '../../Hook/useAuth'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,6 +8,8 @@ const Login = () => {
 
     const { signIn,user,googleSignIn } = useAuth()
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
     
 
     const handleLogin = e =>{
@@ -17,22 +19,25 @@ const Login = () => {
         const password = form.get('password')
         
         if (user) {
-            return toast.error('Please Log Out first from your current account,then log in to new account!');          
+            toast.error('Please Log Out first from your current account,then log in to new account!');  
+                  
         }   
 
         signIn(email,password)
         .then(()=>{
             toast.success('Log In Successfully!');   
-            navigate('/')
+            location.state ? navigate(`${location.state}`) : navigate('/')  
         })
-        .catch(err=>{
-            console.log(email,password);
-            console.log(err);
-        })
+        .catch(err=>toast.error("Error,",err))
     }
     
     const handleGoogle = () =>{
-        return googleSignIn();
+         googleSignIn()
+         .then(()=>{
+            toast.success('Log In Successfully!')
+            location.state ? navigate(`${location.state}`) : navigate('/')  
+        })
+         .catch(err=>toast.error("Error,",err))
     }
 
     return (
@@ -54,7 +59,7 @@ const Login = () => {
                             <input type="password" name="password" placeholder="Enter your password" className="input rounded bg-[#F3F3F3] placeholder:text-xs focus:outline-none focus:border-2 focus:border-[#403F3F]" required />
                         </div>
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-ghost bg-[#403F3F] text-white normal-case rounded">Login</button>
+                            <button type="submit" className="btn  bg-green-400 hover:bg-green-600 text-white normal-case rounded">Login</button>
                         </div>
                         <p className="mt-7 text-[#706F6F] font-semibold text-sm">{`Don't Have An Account ?`} <Link to='/register' className="text-[#F75B5F]">Register</Link> </p>
                     </form>                    
@@ -67,8 +72,8 @@ const Login = () => {
                     <hr className="w-16 h-px bg-gray-300"/>
                 </div>
                 <div className="flex gap-3 justify-center text-xl mt-4">
-                    <BsGoogle onClick={()=> handleGoogle()} className=" cursor-pointer text-green-400"></BsGoogle>
-                    <BsGithub className="cursor-pointer text-green-400"></BsGithub>
+                    <BsGoogle onClick={()=> handleGoogle()} className=" cursor-pointer hover:text-green-400"></BsGoogle>
+                    <BsGithub className="cursor-pointer hover:text-green-400"></BsGithub>
                 </div>
             </div>
         </div>

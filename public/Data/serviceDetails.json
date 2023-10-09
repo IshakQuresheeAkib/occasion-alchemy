@@ -1,0 +1,40 @@
+[
+    {
+      "id": 1,
+      "title": "Wedding Planning",
+      "image": "https://i.ibb.co/vd6jHmD/bunch-flowers-leaves-table.jpg",
+      "description": "Our comprehensive wedding planning service is designed to make your special day truly unforgettable. From the moment you say 'Yes' to the final 'I do,' our dedicated team will be with you every step of the way. We understand that every couple is unique, so we tailor our services to your vision. Whether you dream of a romantic beach wedding, an elegant city affair, or a rustic countryside celebration, we have the expertise to bring your vision to life.\n\nWe take care of everything, from venue selection and decor to catering, entertainment, and photography. Our goal is to create a seamless and stress-free experience, allowing you to focus on what truly matters – celebrating your love with family and friends. Let us turn your wedding dreams into reality."  
+    },
+    {
+      "id": 2,
+      "title": "Baby shower",
+      "image": "https://i.ibb.co/XzGYk1q/two-little-girls-yellow-dresses-sit-egg-studio.jpg",
+      "description": "We specialize in crafting memorable baby showers that radiate love and anticipation. From personalized themes and delightful decorations to interactive games and delectable treats, our event management team ensures every detail is perfectly tailored to celebrate the expecting parents and their soon-to-arrive bundle of joy, creating cherished memories that last a lifetime. With our expertise, you can relax and enjoy the celebration while we handle the logistics, leaving you with nothing but joy and precious moments."        
+    },    
+    {
+        "id": 3,
+        "title": "Birthday Parties",
+        "image": "https://i.ibb.co/7z8Gkt2/jon-tyson-CP68p1f-ZS8k-unsplash-1.jpg",
+        "description": "Celebrate birthdays in style with our birthday party planning service. We specialize in creating unforgettable moments for you and your loved ones. Whether it's a child's first birthday, a milestone celebration, or a surprise party for a friend, we have the creativity and resources to make it a day to remember.\n\nOur services include decorations, entertainment, cake and food arrangements, games and activities, invitations, and party favors. We pay attention to every detail to ensure your party reflects your personality and preferences. Let us take care of the planning, so you can enjoy the day worry-free."              
+    },
+    {
+      "id": 4,
+      "title": "Anniversary Celebrations",
+      "image": "https://i.ibb.co/ZGNKDyN/nathan-dumlao-5-BB-at-DT4o-A-unsplash.jpg",
+      "description": "At our event management team, we specialize in curating unforgettable Anniversary Celebrations that honor enduring love stories. Whether it's a milestone anniversary or a yearly reaffirmation of commitment, we take pride in orchestrating events that capture the essence of your journey together. From crafting personalized themes that reflect your unique bond to selecting exquisite decorations and coordinating every aspect of the celebration, we ensure that your anniversary is a testament to the love and dedication you share. Our team works closely with you to create a tailored experience, including memorable moments, heartfelt speeches, and entertainment that resonates with your story. Let us handle the logistics, so you can focus on rekindling the romance and making new memories that celebrate your enduring love."              
+    },
+    {
+      "id": 5,
+      "title": "Engagement Parties",
+      "image": "https://i.ibb.co/KNgc69K/esther-tuttle-0-U-d-Xov-BS2-E-unsplash.jpg",
+      "description": "At our event management team, we specialize in creating memorable Engagement Parties that celebrate the beginning of your journey as a couple. From personalized themes and elegant decor to heartfelt toasts and entertainment, we handle the details, ensuring your engagement party is a seamless and enchanting experience, leaving you free to relish the love and excitement of the moment.Let us transform your engagement party into a beautiful and memorable chapter in your love story, setting the stage for the joyous journey that lies ahead as a newly engaged couple."            
+    },
+    {
+      "id": 6,
+      "title": "Festival Events",
+      "image": "https://i.ibb.co/jgw6T4g/aditya-chinchure-Zh-QCZjr9f-Ho-unsplash.jpg",
+      "description": "At our event management team, we specialize in curating vibrant Festival Events that celebrate the essence of culture and tradition. We collaborate closely with organizers to craft thematic decor, engaging activities, and immersive experiences that honor the unique spirit of each festival. Our team ensures a seamless and safe event, allowing organizers and attendees to fully immerse themselves in the festivities. Let us transform your festival into a culturally rich experience that fosters a sense of unity and celebration within your community."           
+    }
+
+  ]
+  

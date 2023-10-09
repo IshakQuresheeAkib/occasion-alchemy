@@ -1,0 +1,5 @@
+.features > li {
+    color: #ffffff;
+    list-style:disc;
+    list-style-position: inside;
+}

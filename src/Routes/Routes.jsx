@@ -6,6 +6,10 @@ import Home from "../Pages/Home/Home";
 import Contact from "../Pages/Contact/Contact";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoutes from "./PrivateRoutes";
+import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
+import Features from "../Pages/Features/Features";
+import About from "../Pages/About/About";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +33,19 @@ const router = createBrowserRouter([
         {
           path:'/register',
           element:<Register></Register>
+        },
+        {
+          path:'/serviceDetails/:id',
+          loader:()=>fetch('/Data/serviceDetails.json'),
+          element:<PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>
+        },
+        {
+          path:'/features',
+          element:<PrivateRoutes><Features></Features></PrivateRoutes>
+        },
+        {
+          path:'/about',
+          element:<About></About>
         }
       ]
     },

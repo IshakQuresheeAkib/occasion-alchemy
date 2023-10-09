@@ -1,6 +1,7 @@
 import useAuth from '../../Hook/useAuth'
 import { Link, useNavigate } from "react-router-dom";
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const { createUser,upgradeProfile } = useAuth();
@@ -26,7 +27,7 @@ const Register = () => {
             e.target.reset();
             navigate('/');
         })
-        .catch(err=>console.log(err))
+        .catch(err=>toast.error("Error,",err))
     }
     return (
         <div className="hero md:w-2/5 w-11/12 border rounded-xl mx-auto p-10 shadow-xl my-20">

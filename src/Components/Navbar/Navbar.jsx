@@ -1,4 +1,4 @@
-import {NavLink, useNavigate } from "react-router-dom";
+import {Link, NavLink, useNavigate } from "react-router-dom";
 import { SiSkynet } from 'react-icons/si';
 import useAuth from "../../Hook/useAuth";
 import { toast } from "react-toastify";
@@ -7,11 +7,11 @@ import { MdOutlineClose } from 'react-icons/md'
 import { useEffect, useState } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './navbar.css'
 
 const Navbar = () => {
 
     const { loading,user,logOut } = useAuth();
-    console.log(user,loading);
     const [open,setOpen] = useState(false);
     const [profile,setProfile] = useState(false)
     const navigate = useNavigate();
@@ -69,35 +69,30 @@ const Navbar = () => {
                         </div> 
                         {
                             open && <div className="text-white p-14 bg-green-400 h-screen w-screen" data-aos='fade-right'>
-                            <ul className="space-y-16 text-xl w-24" onClick={()=>setOpen(!open)} >
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Services</li>
-                                <li>Contact</li>
-                                <li><button onClick={()=>handleLogging()}> {loading ? '' : user ? 'Log Out' : 'Log in'}</button></li>
-                            </ul>
+                            <div className="flex flex-col gap-10 text-xl w-24" onClick={()=>setOpen(!open)} >
+                                <Link to="/">Home</Link>
+                                {
+                                    user && <>                                    
+                                    <Link to="/about">About us</Link>
+                                    <Link to="/features">Features</Link>
+                                    </>
+                                }
+                                <Link to="/contact">Contact</Link>
+                                <a><button onClick={()=>handleLogging()}> {loading ? '' : user ? 'Log Out' : 'Log in'}</button></a>
+                            </div>
                         </div> 
                         }
                     </div>
                 </div>
-                <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
-                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
-                        <NavLink to="/" className="block py-2 pl-3 pr-4 text-white bg-green-400 rounded md:bg-transparent md:text-green-400 md:p-0 md:dark:text-blue-500" aria-current="page">Home</NavLink>
-                    </li>
-                    <li>
-                        <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-                    </li>
-                    <li>
-                        <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                    </li>
-                    <li>
-                        <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pricing</a>
-                    </li>
-                    <li>
-                        <NavLink to="/contact" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</NavLink>
-                    </li>
-                    </ul>
+                <div className="hidden md:flex w-1/2 items-center justify-evenly md:order-1" id="navbar">                                      
+                    <NavLink to="/" className="" >Home</NavLink>
+                    {
+                        user && <>
+                            <NavLink to='/about' className="">About us</NavLink>
+                            <NavLink to='/features' className="">Features</NavLink>                   
+                        </>
+                    }
+                    <NavLink to="/contact" className="">Contact</NavLink>                    
                 </div>
             </div>
         </nav>

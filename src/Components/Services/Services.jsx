@@ -1,8 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
 
 const Services = () => {
 
+    const navigate = useNavigate();
     const services = useLoaderData();
     console.log(services);
 
@@ -15,7 +17,7 @@ const Services = () => {
                 <p className="mt-3 text-xs text-gray-500">HERE IS HOW WE CAN HELP YOU</p>
             </div>
             <div className="flex flex-wrap gap-16 mt-20 text-left mx-auto justify-center">
-                {   services.map ?
+                {   services ?
                     services.map(service=><div key={service.id} className="card w-96 bg-base-100 hover:shadow-2xl duration-500 border">
                     <figure>
                         <img src={service.image} alt={service.title} className=" h-64 w-full "/></figure>
@@ -24,7 +26,7 @@ const Services = () => {
                         <p className="text-xs ">{service.description}</p>
                         <p className="mb-5 font-semibold">Price: {service.price}</p>
                         <div className="card-actions ">
-                        <button className="btn-sm text-xs bg-green-400 text-white normal-case hover:bg-green-500 active:scale-90 duration-150">{service.buttonText}</button>
+                        <button onClick={()=>navigate(`/serviceDetails/${service.id}`)} className="btn-sm text-xs bg-green-400 text-white normal-case hover:bg-green-500 active:scale-90 duration-150">{service.buttonText}</button>
                         </div>
                     </div>
                 </div>):toast.error('no data found!')
