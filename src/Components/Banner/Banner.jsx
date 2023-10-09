@@ -7,7 +7,7 @@ const Banner = () => {
         <div className='relative flex items-center md:h-auto h-[70vh] '>
           <AwesomeSlider className='md:h-[85vh] h-[50vh]' bullets={false} >                              
               <div className='flex justify-center'>
-                <img src="/birthday.jpg" alt="" className='opacity-30'/>
+                <img src="/birthday.jpg" alt="" className='md:h-auto h-[50vh] opacity-30'/>
                 <div className='absolute md:top-52 top-10 md:left-1/4 left-10'> 
                   <TypeAnimation
                   sequence={[`We Create,`,1000,]} 
@@ -43,7 +43,7 @@ const Banner = () => {
                 </div>
               </div>
               <div>
-                <img src="/clean.jpg" alt="" className=' opacity-30'/>
+                <img src="/clean.jpg" alt="" className='md:h-auto h-[50vh] opacity-30'/>
                 <div className='absolute md:top-52 top-5 md:left-1/4 left-10'> 
                   <h1 className='font-semibold text-white md:text-5xl text-3xl'>From set up</h1>
                   <h1 className=' font-medium md:text-5xl text-white text-3xl' >to </h1> 

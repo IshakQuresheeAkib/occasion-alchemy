@@ -1,5 +1,6 @@
-.features > li {
-    color: #ffffff;
-    list-style:disc;
-    list-style-position: inside;
+
+
+.features>li:hover{
+    color:rgb(0, 211, 148);
+    cursor:grab
 }

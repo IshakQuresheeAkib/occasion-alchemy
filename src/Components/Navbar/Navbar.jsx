@@ -44,7 +44,7 @@ const Navbar = () => {
                         <p className=" tracking-widest text-center font-normal text-xs">Alchemy</p>
                     </div>
                 </div>
-                <div className="flex gap-6 items-center md:order-2">
+                <div className="flex md:gap-6 gap-1 items-start md:order-2">
                     {
                         user && <div className={` relative ${open && 'hidden'}`} >
                         <label onClick={()=>setProfile(!profile)} className="btn btn-ghost btn-circle avatar">

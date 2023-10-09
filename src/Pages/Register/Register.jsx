@@ -16,7 +16,12 @@ const Register = () => {
         const password = form.get('password')
         const name = form.get('name')
         const image = form.get('imageUrl')
-        console.log(form);
+        
+        if (!/(?=.*[!#$%&?^*@~() "])/.test(password)) {
+            return toast.error('Password should have a special character!')
+        }else if(!/(?=.{8,})/.test(password)){
+            return toast.error('Password should be eight char or longer !')
+        }
         
         console.log(email,password);
 
@@ -63,7 +68,7 @@ const Register = () => {
                             <span>Accept <span className="font-semibold"> Term & Conditions</span></span>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-ghost bg-[#403F3F] text-white normal-case rounded">Login</button>
+                            <button className="btn btn-ghost bg-green-400 text-white normal-case rounded">Login</button>
                         </div>
                         <p className="mt-7 text-[#706F6F] font-semibold text-sm">{`Already Have An Account ?`} <Link to='/login' className="text-green-400 underline underline-offset-2">Log in</Link> </p>
                     </form>                    

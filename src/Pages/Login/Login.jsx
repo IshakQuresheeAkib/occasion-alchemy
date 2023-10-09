@@ -21,7 +21,13 @@ const Login = () => {
         if (user) {
             toast.error('Please Log Out first from your current account,then log in to new account!');  
                   
-        }   
+        }
+
+        if (!/(?=.*[!#$%&?^*@~() "])/.test(password)) {
+            return toast.error('Password should have a special character!')
+        }else if(!/(?=.{8,})/.test(password)){
+            return toast.error('Password should be eight character or longer !')
+        }
 
         signIn(email,password)
         .then(()=>{
@@ -61,7 +67,7 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button type="submit" className="btn  bg-green-400 hover:bg-green-600 text-white normal-case rounded">Login</button>
                         </div>
-                        <p className="mt-7 text-[#706F6F] font-semibold text-sm">{`Don't Have An Account ?`} <Link to='/register' className="text-[#F75B5F]">Register</Link> </p>
+                        <p className="mt-7 text-[#706F6F] font-semibold text-sm">{`Don't Have An Account ?`} <Link to='/register' className="text-green-400 underline-offset-4 underline">Register</Link> </p>
                     </form>                    
                 </div>
             </div>
